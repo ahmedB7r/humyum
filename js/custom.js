@@ -22,24 +22,23 @@
       .addTo(controller)
       .setTween(tl)
 
+      .reverse(false),
+    scene2 = new ScrollMagic.Scene({
+      triggerElement: ".how-it",
+      tweenChanges: false
+    })
+      .addTo(controller)
+      .setTween(tl2)
+
+      .reverse(false),
+    scene3 = new ScrollMagic.Scene({
+      triggerElement: ".sec-blog",
+      tweenChanges: false
+    })
+      .addTo(controller)
+      .setTween(tl3)
+
       .reverse(false);
-  scene2 = new ScrollMagic.Scene({
-    triggerElement: ".how-it",
-    tweenChanges: false
-  })
-    .addTo(controller)
-    .setTween(tl2)
-
-    .reverse(false);
-
-  scene3 = new ScrollMagic.Scene({
-    triggerElement: ".sec-blog",
-    tweenChanges: false
-  })
-    .addTo(controller)
-    .setTween(tl3)
-
-    .reverse(false);
 
   tl.staggerTo(cover, 0.1, { scaleX: 1, delay: 0.3, ease: Power4.linear }, 0.3)
     .staggerTo(
