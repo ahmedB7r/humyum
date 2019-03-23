@@ -1,0 +1,1205 @@
+$main-color: #ee3324;
+$second-color: #515e6a;
+$white-color: #fff;
+$black-color: #000;
+$gray-color: #c5c9cc;
+%transition {
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+}
+
+@font-face {
+  font-family: "janna";
+  src: url("vendors/19270-jannalt-regular.ttf");
+}
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: $gray-color !important;
+  font-size: 20px;
+  @media (max-width: 767.98px) {
+    & {
+      font-size: 16px;
+    }
+  }
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: $gray-color !important;
+  font-size: 20px;
+
+  @media (max-width: 767.98px) {
+    & {
+      font-size: 16px;
+    }
+  }
+}
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: $gray-color !important;
+  font-size: 20px;
+  @media (max-width: 767.98px) {
+    & {
+      font-size: 16px;
+    }
+  }
+}
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: $gray-color !important;
+  font-size: 20px;
+  @media (max-width: 767.98px) {
+    & {
+      font-size: 16px;
+    }
+  }
+}
+
+body {
+  background-color: $white-color;
+  font-family: "Source Sans Pro", sans-serif;
+  position: relative;
+}
+
+.btn {
+  color: $white-color;
+  border-radius: 35px;
+  &:hover {
+    box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.534);
+  }
+}
+
+.loader {
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: $main-color;
+  z-index: 9999;
+}
+// moving
+
+.navbar-devo {
+  .navbar-nav {
+    .nav-item {
+      padding: 10px 10px 0 10px;
+      .nav-link {
+        padding: 0 0 10px 0;
+        color: $second-color;
+        font-weight: 400;
+        font-size: 20px;
+        &.active {
+          color: $main-color;
+          border-bottom: 2px solid $main-color;
+        }
+        border-bottom: 2px solid transparent;
+        @extend %transition;
+        &:hover {
+          color: $main-color;
+          border-bottom: 2px solid $main-color;
+        }
+      }
+    }
+  }
+  .btn-sign {
+    background-color: $second-color;
+    padding: 5px 37px;
+    font-size: 20px;
+    font-family: Light;
+    @extend %transition;
+    &:hover {
+      background-color: $main-color;
+      color: $white-color;
+    }
+  }
+  .btn-register {
+    background-color: $main-color;
+    padding: 5px 32px;
+    font-size: 20px;
+    font-family: Light;
+    @extend %transition;
+    &:hover {
+      background-color: $second-color;
+      color: $white-color;
+    }
+  }
+}
+.home-devo {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    z-index: 2;
+    height: 100%;
+    background-image: linear-gradient(to right, $main-color, $second-color);
+    opacity: 0.8;
+  }
+  min-height: 600px;
+  max-height: 600px;
+}
+
+.container {
+  z-index: 999;
+
+  .home-content {
+    .home-text-devo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 99;
+      transform: translate3d(-50%, -50%, 0);
+      padding-bottom: 20px;
+      .home-text {
+        z-index: 999;
+
+        font-size: 38px;
+        color: $white-color;
+
+        @media (max-width: 767.98px) {
+          & {
+            font-size: 34px;
+          }
+        }
+        @media (max-width: 575.98px) {
+          & {
+            font-size: 30px;
+          }
+        }
+      }
+    }
+    .input-group {
+      margin: 0 auto;
+      width: 62%;
+      outline: none;
+      position: absolute;
+      top: 70%;
+      left: 50%;
+      z-index: 99;
+      transform: translate3d(-50%, -50%, 0);
+      @media (max-width: 1199.98px) {
+        & {
+          width: 80%;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        & {
+          width: 90%;
+        }
+      }
+
+      &:focus {
+        border: none;
+        box-shadow: unset;
+      }
+      .form-control {
+        border-radius: 35px 0 0 35px;
+        outline: none;
+        padding: 5px 15px 5px 45px;
+        color: $second-color;
+        font-size: 20px;
+        border: none;
+
+        &:focus {
+          box-shadow: unset;
+          border: none;
+        }
+      }
+      .btn-search {
+        padding: 23px 60px 20px 60px;
+        background-color: $main-color;
+        &:focus {
+          box-shadow: unset;
+        }
+        @extend %transition;
+        &:hover {
+          background-color: $second-color;
+        }
+        @media (max-width: 767.98px) {
+          & {
+            padding: 13px 30px 10px 30px;
+          }
+        }
+        i {
+          @media (max-width: 767.98px) {
+            & {
+              font-size: 20px;
+            }
+          }
+          font-size: 30px;
+        }
+      }
+    }
+  }
+}
+
+.wrap {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+
+  .bg {
+    z-index: -1;
+  }
+}
+
+main {
+  border-bottom: 5px solid $main-color;
+  padding-bottom: 80px;
+  margin-bottom: 60px;
+
+  .sec-header {
+    position: relative;
+    &::before {
+      content: attr(data-shadow);
+      position: absolute;
+      transform: translateX(-50%);
+      left: 50%;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      color: $gray-color;
+      font-size: 97px;
+      text-align: center;
+      @media (max-width: 1199.98px) {
+        & {
+          font-size: 80px;
+        }
+      }
+      @media (max-width: 991.98px) {
+        & {
+          font-size: 60px;
+          bottom: 20%;
+        }
+      }
+      @media (max-width: 767.98px) {
+        & {
+          font-size: 49px;
+          bottom: 20%;
+          left: unset;
+        }
+      }
+      @media (max-width: 575.98px) {
+        & {
+          font-size: 32px;
+          bottom: 30%;
+          left: 50%;
+        }
+      }
+      opacity: 0.3;
+      font-weight: 300;
+    }
+    .sec-header {
+      font-size: 50px;
+      color: $main-color;
+      font-weight: bold;
+      @media (max-width: 991.98px) {
+        & {
+          font-size: 45px;
+        }
+      }
+      @media (max-width: 767.98px) {
+        & {
+          font-size: 40px;
+        }
+      }
+      @media (max-width: 575.98px) {
+        & {
+          font-size: 29px;
+        }
+      }
+    }
+  }
+  .how-it {
+    .img-div {
+      .card-img-devo {
+        border-radius: 50%;
+        width: 170px;
+        height: 170px;
+        @media (max-width: 1199.98px) {
+          & {
+            height: 140px;
+            width: 140px;
+          }
+        }
+        @media (max-width: 991.98px) {
+          & {
+            height: 100px;
+            width: 100px;
+          }
+        }
+        @media (max-width: 767.98px) {
+          & {
+            height: 230px;
+            width: 230px;
+          }
+        }
+        @media (max-width: 575.98px) {
+          & {
+            height: 180px;
+            width: 180px;
+          }
+        }
+      }
+      position: relative;
+      .tags-devo {
+        top: 0%;
+        left: 30%;
+        a {
+          padding: 5px 12px;
+          font-size: 16px;
+          color: $white-color;
+          background-color: $main-color;
+          border-radius: 50%;
+          font-weight: 300;
+          @extend %transition;
+          &:hover {
+            color: $main-color;
+            background-color: $white-color;
+          }
+          z-index: 4;
+          display: inline-block;
+          text-decoration: none;
+        }
+        @media (max-width: 991.98px) {
+          & {
+            left: 25%;
+          }
+        }
+        @media (max-width: 767.98px) {
+          & {
+            left: 30%;
+
+            a {
+              padding: 4px 17px;
+
+              font-size: 24px;
+            }
+          }
+        }
+        @media (max-width: 575.98px) {
+          & {
+            left: 35%;
+            a {
+              padding: 5px 13px;
+              font-size: 16px;
+            }
+          }
+        }
+        position: absolute;
+      }
+    }
+    .card-body {
+      .card-title {
+        a {
+          font-size: 21px;
+          color: $main-color;
+          padding-bottom: 10px;
+          font-weight: bold;
+          text-decoration: none;
+          @extend %transition;
+        }
+        &:hover {
+          a {
+            color: $second-color;
+          }
+        }
+      }
+      .card-text {
+        color: $gray-color;
+        font-size: 16px;
+      }
+    }
+  }
+  .sec-1 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    &::after {
+      content: "";
+      @extend %transition;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: block;
+      z-index: 2;
+      height: 100%;
+      background-color: $main-color;
+      opacity: 0.7;
+    }
+    .container {
+      min-height: 420px;
+      .sec-content {
+        z-index: 99;
+        position: relative;
+        overflow: hidden;
+        .text-cover {
+          position: absolute;
+          display: block;
+          width: 100%;
+          height: 100%;
+          left: 0;
+          top: -5%;
+          bottom: -5%;
+          z-index: 100;
+          padding: 15px 0;
+          transform-origin: left;
+          background: $second-color;
+          transform: scaleX(0);
+        }
+
+        .sec-text {
+          font-size: 91px;
+          color: $white-color;
+          font-weight: 300;
+          @media (max-width: 991.98px) {
+            & {
+              font-size: 70px;
+            }
+          }
+          @media (max-width: 767.98px) {
+            & {
+              font-size: 50px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .sec-blog {
+    .card-overlay {
+      &::after {
+        content: "";
+        @extend %transition;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: block;
+        z-index: 0;
+        height: 100%;
+        background-image: linear-gradient(
+          to bottom,
+          lighten($second-color, 10%),
+          darken($second-color, 30%)
+        );
+
+        opacity: 0.9;
+      }
+
+      &:hover {
+        &::after {
+          opacity: 0.4;
+        }
+      }
+
+      .card-img-overlay {
+        z-index: 2;
+        top: unset;
+      }
+    }
+    .card {
+      min-height: 280px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      margin-bottom: 30px;
+      position: relative;
+      .card-body-devo {
+        position: relative;
+        z-index: 999;
+        .card-subtitle {
+          color: $white-color;
+          font-size: 14px;
+        }
+        .card-title {
+          a {
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 21px;
+            color: $white-color;
+            @extend %transition;
+          }
+          &:hover {
+            a {
+              color: $main-color;
+            }
+          }
+        }
+      }
+    }
+    .btn-see {
+      background-color: $main-color;
+      padding: 15px 60px 15px 60px;
+      font-size: 21px;
+      @extend %transition;
+      &:hover {
+        color: $white-color;
+        background-color: $second-color;
+      }
+    }
+  }
+
+  /* search page */
+  .search-sec {
+    .search-devo {
+      .container {
+        .input-group {
+          margin: 0 auto;
+          width: 62%;
+          outline: none;
+          @media (max-width: 1199.98px) {
+            & {
+              width: 80%;
+            }
+          }
+
+          @media (max-width: 767.98px) {
+            & {
+              width: 90%;
+            }
+          }
+
+          &:focus {
+            border: none;
+            box-shadow: unset;
+          }
+          .form-control {
+            border-radius: 35px 0 0 35px;
+            outline: none;
+            padding: 10px 15px 12px 45px;
+            color: $white-color;
+            font-size: 20px;
+            background-color: $second-color;
+            border: none;
+
+            @media (max-width: 767.98px) {
+              & {
+                font-size: 16px;
+              }
+            }
+            &:focus {
+              box-shadow: unset;
+              outline: none;
+
+              border: none;
+            }
+          }
+          .btn-search {
+            padding: 20px 60px 20px 60px;
+            background-color: $main-color;
+            &:focus {
+              box-shadow: unset;
+            }
+            @extend %transition;
+            &:hover {
+              background-color: $second-color;
+            }
+            @media (max-width: 767.98px) {
+              & {
+                padding: 13px 30px 10px 30px;
+              }
+            }
+            i {
+              @media (max-width: 767.98px) {
+                & {
+                  font-size: 20px;
+                }
+              }
+              font-size: 30px;
+            }
+          }
+        }
+      }
+    }
+
+    .search-h {
+      color: $main-color;
+      font-size: 20px;
+      position: relative;
+      display: inline-block;
+      &::after {
+        content: "";
+        display: block;
+        width: 50%;
+        height: 3px;
+        position: absolute;
+        left: 0;
+        bottom: -9px;
+        background-color: $main-color;
+      }
+    }
+
+    .card {
+      border: none;
+      box-shadow: 1px 7px 20px 2px rgba(250, 178, 178, 0.2);
+      background-color: $white-color;
+      @extend %transition;
+
+      &:hover {
+        box-shadow: 1px 7px 20px 2px rgba(250, 178, 178, 0.4);
+      }
+      .rounded-circle {
+        width: 40px;
+        height: 40px;
+      }
+      .article-meta {
+        color: $gray-color;
+        font-size: 12px;
+        a {
+          color: $second-color;
+          font-size: 13px;
+          @extend %transition;
+
+          &:hover {
+            color: $main-color;
+            text-decoration: none;
+          }
+        }
+      }
+
+      .card-title {
+        a {
+          font-size: 13.5px;
+          color: $second-color;
+          @extend %transition;
+
+          &:hover {
+            color: $main-color;
+            text-decoration: none;
+          }
+        }
+      }
+
+      .meal-price {
+        display: inline-block;
+        padding: 5px 12px;
+        background-color: $main-color;
+        color: $white-color;
+        border-radius: 30px;
+        font-size: 17px;
+
+        @media (max-width: 1199.98px) {
+          & {
+            font-size: 13px;
+            padding: 5px 10px;
+          }
+        }
+      }
+    }
+    .btn-load {
+      background-color: $main-color;
+      padding: 15px 60px 15px 60px;
+      font-size: 21px;
+      @extend %transition;
+      &:hover {
+        color: $white-color;
+        background-color: $second-color;
+      }
+    }
+  }
+
+  .total-price {
+    background-color: $second-color;
+    border-radius: 5px;
+    min-height: 500px;
+    position: relative;
+    .total {
+      font-size: 16px;
+      color: $white-color;
+      font-weight: 500;
+    }
+  }
+
+  .total-note {
+    color: $gray-color;
+    font-size: 16px;
+    font-weight: 300;
+  }
+  .btn-order {
+    position: absolute;
+    @extend %transition;
+    font-weight: 300;
+    bottom: 20px;
+    left: 10px;
+    padding: 10px 20px;
+
+    background-color: $main-color;
+    color: $white-color;
+    font-size: 16px;
+  }
+
+  .label-devo {
+    font-size: 16px;
+    color: $second-color;
+    font-family: "janna";
+  }
+
+  .label-devo1 {
+    font-size: 14px;
+    color: $second-color;
+  }
+
+  .form-control {
+    &::placeholder {
+      font-size: 16px;
+      font-family: "janna";
+    }
+  }
+
+  .padd {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    @media (max-width: 767.98px) {
+      & {
+        padding-top: 100px;
+        padding-bottom: 100px;
+      }
+    }
+  }
+  .half-sec {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    @media (max-width: 767.98px) {
+      & {
+        display: none;
+      }
+    }
+  }
+
+  .btn-sign {
+    background-color: $second-color;
+    border-radius: 5px;
+    padding: 10px 23px;
+    @extend %transition;
+    font-family: "janna";
+    font-size: 16px;
+    &:hover {
+      background-color: $main-color;
+    }
+  }
+
+  .cart-h {
+    font-weight: 600;
+    color: $main-color;
+    font-size: 20px;
+    display: inline-block;
+  }
+
+  .cart-p {
+    color: $second-color;
+    font-size: 16px;
+  }
+
+  .tags {
+    margin-bottom: 70px;
+    .tag-devo {
+      a {
+        @extend %transition;
+        margin-right: 7px;
+        margin-bottom: 10px;
+        background-color: $second-color;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 30px;
+        color: $white-color;
+        display: inline-block;
+        font-size: 14px;
+        &:hover {
+          background-color: $main-color;
+        }
+      }
+    }
+  }
+
+  .text-danger {
+    a {
+      text-decoration: none;
+      color: $main-color;
+      &:hover {
+        color: $second-color;
+        border: 0;
+      }
+    }
+  }
+  /* single-blog page */
+
+  .meal-desc {
+    .page-header-bg {
+      position: relative;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: block;
+        z-index: 0;
+        height: 100%;
+        background-image: linear-gradient(
+          to top,
+          $main-color 30%,
+          lighten($main-color, 10%),
+          transparent
+        );
+        opacity: 0.7;
+      }
+      min-height: 450px;
+      max-height: 600px;
+      .container {
+        z-index: 99;
+
+        .page-content {
+          .chief {
+            display: inline-block;
+
+            .rounded-circle {
+              width: 50px;
+              height: 50px;
+              border: 2px solid #f89421;
+            }
+            .article-meta {
+              color: $white-color;
+              font-size: 10px;
+              a {
+                color: $white-color;
+                font-size: 19px;
+                @extend %transition;
+
+                &:hover {
+                  color: $main-color;
+                  text-decoration: none;
+                }
+              }
+            }
+          }
+          .mail-name {
+            font-size: 58.5px;
+            color: $white-color;
+            @media (max-width: 575.98px) {
+              & {
+                text-align: center;
+                font-size: 45.5px;
+              }
+            }
+          }
+          .social-head {
+            a {
+              text-decoration: none;
+
+              i {
+                background-color: $white-color;
+                color: $main-color;
+                padding: 5px 20px;
+                border-radius: 40px;
+                @extend %transition;
+
+                &:hover {
+                  background-color: $main-color;
+                  color: $white-color;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .title-sec {
+      color: $main-color;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 14px;
+      color: $second-color;
+    }
+    .mail-list {
+      font-size: 14px;
+      color: $second-color;
+    }
+  }
+
+  /* single page */
+
+  .title-sec {
+    color: $main-color;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  .meal-desc-single {
+    .page-header-bg {
+      position: relative;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: block;
+        z-index: 0;
+        height: 100%;
+        background-image: linear-gradient(
+          to top,
+          $second-color 30%,
+          lighten($second-color, 10%),
+          transparent
+        );
+        opacity: 0.8;
+      }
+      min-height: 450px;
+      .container {
+        z-index: 99;
+
+        .page-content {
+          .meal-info {
+            font-size: 31.5px;
+            color: $white-color;
+            @media (max-width: 575.98px) {
+              & {
+                text-align: center;
+                display: block;
+                font-size: 26.5px;
+              }
+            }
+          }
+
+          .mail-name {
+            font-size: 58.5px;
+            color: $white-color;
+            @media (max-width: 575.98px) {
+              & {
+                text-align: center;
+                font-size: 45.5px;
+              }
+            }
+          }
+
+          .chief {
+            .rounded-circle {
+              width: 50px;
+              height: 50px;
+              border: 2px solid #f89421;
+            }
+            .article-meta {
+              color: $white-color;
+              font-size: 14px;
+              a {
+                color: $white-color;
+                font-size: 26px;
+                @media (max-width: 1200px) {
+                  & {
+                    font-size: 24px;
+                  }
+                }
+
+                @extend %transition;
+
+                &:hover {
+                  color: $main-color;
+                  text-decoration: none;
+                }
+              }
+            }
+            .location {
+              color: $white-color;
+              .loca {
+                font-size: 14px;
+              }
+              .loca-h {
+                font-size: 26px;
+                @media (max-width: 400px) {
+                  & {
+                    font-size: 24px;
+                  }
+                }
+              }
+            }
+          }
+          .max-num {
+            color: $white-color;
+            font-size: 13px;
+          }
+
+          .form-inline {
+            .input-group {
+              width: unset;
+
+              .form-control {
+                border: none;
+                text-align: center;
+                font-size: 17px;
+                font-weight: 600;
+                width: 40px;
+                color: $main-color;
+                &:focus {
+                  outline: none;
+                  box-shadow: none;
+                  border: none;
+                }
+              }
+              .btn-minus {
+                border-radius: 30px 0 0 30px;
+                background-color: $white-color;
+                color: $main-color;
+              }
+
+              .btn-plus {
+                background-color: $white-color;
+                border-radius: 0 30px 30px 0;
+                color: $main-color;
+              }
+            }
+          }
+          .btn-order {
+            background-color: $main-color;
+            padding: 5px 32px;
+            font-size: 20px;
+            font-weight: 300;
+            @extend %transition;
+            &:hover {
+              background-color: $second-color;
+            }
+          }
+        }
+      }
+    }
+
+    p {
+      font-size: 14px;
+      color: $second-color;
+    }
+    .mail-list {
+      font-size: 14px;
+      color: $second-color;
+    }
+  }
+}
+
+footer {
+  .list-header {
+    font-size: 22px;
+    color: $main-color;
+    font-weight: 600;
+  }
+  .list-unstyled {
+    .footer-list {
+      a {
+        font-weight: 300;
+        color: $second-color;
+        text-decoration: none;
+        font-size: 18px;
+        @extend %transition;
+        &:hover {
+          color: $main-color;
+        }
+      }
+    }
+    .social-list {
+      a {
+        color: $main-color;
+        text-decoration: none;
+        font-size: 20px;
+        @extend %transition;
+        &:hover {
+          color: $second-color;
+        }
+      }
+    }
+  }
+  .app-store {
+    .store-a {
+      @extend %transition;
+      &:hover {
+        background-color: $second-color;
+      }
+      text-decoration: none;
+      color: $white-color;
+      background-color: $main-color;
+      display: inline-block;
+      border-radius: 30px;
+      padding: 10px 17px 8px 17px;
+      width: 180px;
+      @media (max-width: 767.98px) {
+        & {
+          padding: 8px 12px;
+          padding: 10px 17px 5px 17px;
+          width: 140px;
+        }
+      }
+      .store-p-1 {
+        display: inline-block;
+        font-size: 8px;
+        padding: 0;
+        margin: 0;
+        @media (max-width: 767.98px) {
+          & {
+            font-size: 6px;
+          }
+        }
+      }
+      .store-p {
+        display: block;
+        color: $white-color;
+        font-size: 15px;
+        padding: 0;
+        margin: 0;
+        @media (max-width: 767.98px) {
+          & {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+  .footer-bottom {
+    .copyright-devo {
+      font-size: 14px;
+      @media (max-width: 575.98px) {
+        & {
+          font-size: 12px;
+        }
+      }
+      .devolum {
+        a {
+          color: $main-color;
+          text-decoration: none;
+          @extend %transition;
+          &:hover {
+            color: $second-color;
+          }
+        }
+      }
+    }
+  }
+}
